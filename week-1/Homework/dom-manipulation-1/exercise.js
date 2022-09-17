@@ -16,6 +16,8 @@ Write JavaScript below that logs:
 
 */
 
+const list=document.querySelectorAll("p")
+console.log(list);
 
 /*
 Task 2
