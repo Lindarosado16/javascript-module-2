@@ -50,12 +50,32 @@ Write JavaScript below that changes the background colour of the page when the '
 */
 
 
+let changeBtn = document.querySelector("#bgrChangeBtn");
+changeBtn.addEventListener("click", changeColor);
+
+function changeColor(){
+    let body = document.querySelector("body");
+    body.style.backgroundColor = "#abceeb";
+
+
+}
 /*
 Task 4
 ======
 
 When a user clicks the ‘Add some text’ button, a new paragraph should be added inside the section that says “LEARN MORE”
 */
+
+const newB = document.querySelector("#addTextBtn");
+newB.addEventListener("click", masInf);
+
+function masInf(){
+    const parrafoN = document.createElement ("p");
+    mainArticles.appendChild (parrafoN);
+    parrafoN.innerText = ("La bicicleta es el medio de transporte más ecológico pero, ¿sabías que todavía se puede incrementar su punto fuerte? Conoce en este post qué son las bicicletas sostenibles y cuáles son las mejores bicicletas ecológicas.");
+}
+
+
 
 
 
@@ -66,7 +86,14 @@ Task 5
 When the 'Larger links!' button is clicked, the text of all links on the page should increase.
 */
 
+const button = document.querySelector("#largerLinksBtn");
+button.addEventListener("click", aumentarLink);
 
+function aumentarLink() {
+    const links= document.querySelectorAll("a")
+    links.forEach(link=>link.style.fontSize="x-large")
+
+}
 /*
 Task 6
 ======
