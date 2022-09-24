@@ -17,3 +17,30 @@ var car = {
 
 */
 
+const student = {
+    Name: "Linda",
+    Lastname: "Rosado",
+    Age: "26"
+};
+
+const movil = {
+    Brand: "Apple",
+    model: "11 pro max",
+    color: "Black"
+};
+
+const favoriteFood = {
+    type: "Venezolana and Peruana",
+    food: "Arepa and ceviche"
+};
+
+const teacher = {
+    Name: "Eduard",
+    Lastname: "Haff"
+
+};
+
+const cars = {
+    Brand: "toyota",
+    model: "Yaris"
+};

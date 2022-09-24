@@ -103,6 +103,15 @@ When the 'Add' button is clicked, get the text inside the input field and create
 Also clear the text inside the input field
 */
 
+
+const newB = document.querySelector("#addTextBtn");
+newB.addEventListener("click", masInf);
+
+function masInf(){
+    const parrafoN = document.createElement ("p");
+    mainArticles.appendChild (parrafoN);
+    parrafoN.innerText = ("La construcción de la primera bicicleta con pedales se atribuye al escocés Kirkpatrick Macmillan, en el año 1839. Una copia de la bicicleta de Macmillan se exhibe en el Museo de Ciencias en Londres, Inglaterra.");
+}
 /*
 Task 7
 ======
@@ -112,3 +121,17 @@ Using the same function in Task 3, every time the 'Change colour' button is clic
 The next color when you are in the last color of the array will be the first color again.
 */
 
+
+const pantallaC = ["white", "black", "pink", "orange", "blue"];
+const index = 0;
+
+const bColor = document.querySelector("#bgrChangeBtn");
+bColor.addEventListener("click", colorB);
+
+function colorB(){
+    const body = document.querySelector("body");
+    if(index >= pantallaC.length){
+        index = 0
+    }
+    body.style.backgroundColor = pantallaC [index]
+}
