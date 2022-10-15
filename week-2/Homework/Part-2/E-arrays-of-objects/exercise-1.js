@@ -24,13 +24,15 @@ DO NOT EDIT ANYTHING ABOVE THIS LINE
 WRITE YOUR CODE BELOW
 */
 
+let persons = [person1, person2, person3];
+// Complete here
 
-let persons = // Complete here
+let personNames = persons.map ((person)=> person.name );
+ // Complete here
 
-let personNames = // Complete here
+let personsYoungerThan28YearsOld = persons.filter ((person) => person.age <= 28 );
 
-let personsYoungerThan28YearsOld = // Complete here
-
+// Complete here
 
 /*
 DO NOT EDIT ANYTHING BELOW THIS LINE
