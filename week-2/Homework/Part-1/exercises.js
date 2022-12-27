@@ -15,13 +15,17 @@
  */
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
+}
+
+function exerciseOne(arrayOfPeople) {
+  let content = document.querySelector("#content");
   arrayOfPeople.forEach(element => {
-          const newH1 = document.createElement("h1")
-    const newH2 = document.createElement("h2")
-    newH1.innerHTML=element.name
-    newH2.innerHTML=element.job
-    content.appendChild(newH1)
-    content.appendChild(newH2)
+    let h1 = document.createElement("h1");
+    h1.innerText = element.name;
+    content.appendChild(h1);
+    let h2 = document.createElement("h2");
+    h2.innerText = element.job;
+    content.appendChild(h2);
   });
 }
 
@@ -32,17 +36,18 @@ function exerciseOne(arrayOfPeople) {
  * All of your HTML should go inside the Div tag with the id "content".
  *
  */
+function exerciseTwo(shopping) {
   //Write your code in here
 
-function exerciseTwo(shopping) {
  let content = document.querySelector("#content");
-  arrayOfshopping.forEach(element => {
-    const lista = document.createElement("ul");
-    const objetos= document.createElement("li");
-          objetos.innerHTML=shopping;
-   lista.appendChild(lista)
-   
-    
+  let myUl = document.createElement("ul");
+  shopping.forEach((element) => {
+    let myLi = document.createElement("li");
+    console.log("element", element);
+    myLi.textContent = element;
+    myUl.appendChild(myLi);
+  });
+  content.appendChild(myUl);
 }
 
 /**
@@ -76,14 +81,34 @@ function exerciseTwo(shopping) {
 **/
 function exerciseThree(books) {
   //Write your code in here
- let content= document.querySelector("#content");
-  books.forEach(element => {
-    const listalibros = document.createElement("ul");
-    const objetos= document.createElement("li");
-          objetos.innerHTML=shopping;
-   lista.appendChild(lista)
-  }
+   let myBooks = document.querySelector("#content");
+  let myUl = document.createElement("ul");
+
+  books.forEach((element) => {
+    console.log("element", element);
+    let myP = document.createElement("p");
+    myP.textContent = element.title + " - " + element.author;
+    console.log(element.color);
+    console.log(element.title);
+    console.log("myP", myP);
+    myBooks.appendChild(myP);
+    let myLi = document.createElement("li");
+    let myImg = document.createElement("img");
+    myImg.src = element.url;
+    if (element.alreadyRead) {
+      myP.style.background = "green";
+    } else {
+      myP.style.background = "red";
+    }
+    myP.appendChild(myImg);
+    myLi.appendChild(myP);
+    console.log("myLi", myLi);
+    myUl.appendChild(myLi);
+  });
+  myBooks.appendChild(myUl);
 }
+
+
 //
 //
 //
@@ -107,21 +132,24 @@ let shopping = ["Milk", "Break", "Eggs", "A Dinosaur", "Cake", "Sugar", "Tea"];
 exerciseTwo(shopping);
 
 const books = [
-  {
-    title: "The Design of Everyday Things",
+  {    title: "The Design of Everyday Things",
     author: "Don Norman",
-    alreadyRead: false
+    alreadyRead: false,
+    
   },
   {
     title: "The Most Human Human",
     author: "Brian Christian",
-    alreadyRead: true
+    alreadyRead: true,
   },
   {
     title: "The Pragmatic Programmer",
     author: "Andrew Hunt",
-    alreadyRead: true
+    alreadyRead: true, 
   }
 ];
 
-exerciseThree (books);
+exerciseThree(books);
+ 
+
+//PONER LAS IMAGENES CON HTML

@@ -7,7 +7,7 @@ Write JavaScript below that logs:
 
     2. the first div element node
     --> should log the ".site-header" node
-
+    
     3. the element with id "jumbotron-text"
     --> should log the "#jumbotron-text" node
 
@@ -16,31 +16,44 @@ Write JavaScript below that logs:
 
 */
 
-const list=document.querySelectorAll("p")
-console.log(list);
+// 1.
+console.log(document.querySelectorAll("p"))
+/*let pArray = Array.from(document.querySelectorAll("p"));
+pArray.forEach((i) => {
+    console.log(i)
+        //    todoList.appendChild(generateTodoDOM(todo))
+    })
+    
 
-const div=document.querySelectorAll("div")
-const firstDiv= div[0]
-console.log(firstDiv);
+//2.
+let divArray = Array.from(document.querySelectorAll("div"));
+console.log(divArray[0])
 
-const jumbotron=document.querySelectorAll("#jumbotron-text")
-console.log(jumbotron);
+//3.
+console.log(document.querySelector("#jumbotron-text"));
 
-const primary=document.querySelectorAll(".primary-content p")
-console.log(primary);
+//4.
+// let prim_cont = document.querySelector(".primary-content");
+// let p_in_prim = prim_cont.querySelectorAll("p");
+// console.log(p_in_prim);
+
+console.log(document.querySelector(".primary-content").querySelectorAll("p"));
 
 /*
 Task 2
 ======
 
-When a user clicks the 'ALERT' button, an alert box should pop up with the text "Thanks for visiting Bikes for Refugees!"
+When a user clicks th e 'ALERT' button, an alert box should pop up with the text "Thanks for visiting Bikes for Refugees!"
 */
+
+        
 let myButton = document.querySelector("#alertBtn");
 myButton.addEventListener("click", alertSomething);
 
 function alertSomething() {
   alert("Thanks for visiting Bikes for Refugees!");
 }
+
 
 /*
 Task 3
@@ -49,35 +62,34 @@ Task 3
 Write JavaScript below that changes the background colour of the page when the 'Change colour' button is clicked.
 */
 
-
 let changeBtn = document.querySelector("#bgrChangeBtn");
-changeBtn.addEventListener("click", changeColor);
+changeBtn.addEventListener("click", changecolour);
 
-function changeColor(){
+
+function changecolour() {
     let body = document.querySelector("body");
+    //  let body = document.body;
     body.style.backgroundColor = "#abceeb";
-
+    // document.body.style.backgroundColor = "red";
 
 }
+
 /*
 Task 4
 ======
 
 When a user clicks the ‘Add some text’ button, a new paragraph should be added inside the section that says “LEARN MORE”
 */
- 
-const newB = document.querySelector("#addTextBtn");
-newB.addEventListener("click", masInf);
 
-function masInf(){
-    const parrafoN = document.createElement ("p");
-    mainArticles.appendChild (parrafoN);
-    parrafoN.innerText = ("La bicicleta es el medio de transporte más ecológico pero, ¿sabías que todavía se puede incrementar su punto fuerte? Conoce en este post qué son las bicicletas sostenibles y cuáles son las mejores bicicletas ecológicas.");
+let addTxt = document.querySelector("#addTextBtn");
+addTxt.addEventListener("click", addText);
+
+function addText(){
+    let paragraph = document.createElement("p");
+    let mainArticles = document.querySelector("#mainArticles");    
+    mainArticles.appendChild(paragraph);
+    paragraph.innerText = "NEW PARAGRAPH"; 
 }
-
-
-
-
 
 /*
 Task 5
@@ -86,14 +98,19 @@ Task 5
 When the 'Larger links!' button is clicked, the text of all links on the page should increase.
 */
 
-const button = document.querySelector("#largerLinksBtn");
-button.addEventListener("click", aumentarLink);
+let largestLinkBtn = document.querySelector("#largestLinksBtn");
+ largestLinkBtn.addEventListener("click", largestLinks);
 
-function aumentarLink() {
-    const links= document.querySelectorAll("a")
-    links.forEach(link=>link.style.fontSize="x-large")
+ function largestLinks() {
+    const links=document.querySelectorAll("a");
+    console.log (links);
+    links.forEach(e=>e.style.fontSize = "x-large");
 
-}
+ }
+
+
+
+
 /*
 Task 6
 ======
@@ -102,16 +119,22 @@ Using the same function in Task 4,
 When the 'Add' button is clicked, get the text inside the input field and create a new paragraph in the "LEARN MORE" section
 Also clear the text inside the input field
 */
+let addTxto = document.querySelector("#addArticleBtn");
+addTxto.addEventListener("click", addTexto);
 
+function addTexto() {
+    const input = document.querySelector("#addArticleInput")
+    const gtext = input.value
 
-const newB = document.querySelector("#addTextBtn");
-newB.addEventListener("click", masInf);
+    let newP = document.createElement("p")
+    newP.textContent = gtext
+    let learn = document.querySelector("#mainArticles")
+    learn.appendChild(newP)
 
-function masInf(){
-    const parrafoN = document.createElement ("p");
-    mainArticles.appendChild (parrafoN);
-    parrafoN.innerText = ("La construcción de la primera bicicleta con pedales se atribuye al escocés Kirkpatrick Macmillan, en el año 1839. Una copia de la bicicleta de Macmillan se exhibe en el Museo de Ciencias en Londres, Inglaterra.");
+    input.value =""
 }
+
+
 /*
 Task 7
 ======
@@ -121,17 +144,15 @@ Using the same function in Task 3, every time the 'Change colour' button is clic
 The next color when you are in the last color of the array will be the first color again.
 */
 
-
-const pantallaC = ["white", "black", "pink", "orange", "blue"];
-const index = 0;
-
-const bColor = document.querySelector("#bgrChangeBtn");
-bColor.addEventListener("click", colorB);
-
-function colorB(){
-    const body = document.querySelector("body");
-    if(index >= pantallaC.length){
-        index = 0
+const colors= ["yellow", "red", "green", "blue"]
+const button2 = document.querySelector("#bgrChangeBtn");
+let i = 0
+button2.addEventListener("click", changeColor);
+function changeColor() {
+    document.body.style.backgroundColor = colors[i]
+     if (i < colors.length - 1) {
+        i++;
+    } else {
+        i = 0;
     }
-    body.style.backgroundColor = pantallaC [index]
 }
