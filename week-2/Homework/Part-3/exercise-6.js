@@ -101,3 +101,9 @@ var mentors = [
 
 //YOUR CODE HERE
 
+mentors.forEach(mentor => {
+  if (mentor.job.city ===  "Barcelons" && mentor.skills.find(skill => skill === "React")){
+
+    ocnsole.log(`Hi, my name is ${mentor.firstName} ${mentor.lastName}. I work in Barcelona and I Know React.`);
+  }
+  })

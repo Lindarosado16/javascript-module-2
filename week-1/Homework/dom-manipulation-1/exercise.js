@@ -65,7 +65,7 @@ Task 4
 
 When a user clicks the ‘Add some text’ button, a new paragraph should be added inside the section that says “LEARN MORE”
 */
-
+ 
 const newB = document.querySelector("#addTextBtn");
 newB.addEventListener("click", masInf);
 

@@ -14,5 +14,5 @@ let person = {
     celebrateBirthday: function () {
         this.age = this.age + 1;
     }
-}
+};
 
